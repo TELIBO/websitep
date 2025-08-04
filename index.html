@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanjay Sajnani | Full Stack Web Developer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animate On Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Modern Retro Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .modern-heading { font-family: 'Space Grotesk', sans-serif; }
+    
+    /* Enhanced Dark Mode Configuration */
+    .dark {
+      color-scheme: dark;
+    }
+    
+    /* Subtle Retro Background */
+    .bg-retro {
+      background-color: #fefcf7;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(218, 165, 32, 0.02) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.015) 0%, transparent 60%);
+      background-size: 200px 200px, 300px 300px;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    
+    .dark .bg-retro {
+      background: #0a0a0a;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(184, 134, 11, 0.06) 0%, transparent 50%);
+    }
+
+    /* Glassmorphic Cards */
+    .glass-card {
+      background: rgba(255, 253, 247, 0.85);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(218, 165, 32, 0.2);
+      box-shadow: 
+        0 8px 32px rgba(139, 69, 19, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 20px 40px rgba(139, 69, 19, 0.2),
+        0 0 0 1px rgba(218, 165, 32, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    
+    .dark .glass-card {
+      background: rgba(15, 15, 15, 0.9);
+      border: 1px solid rgba(218, 165, 32, 0.3);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        0 4px 16px rgba(218, 165, 32, 0.15),
+        inset 0 1px 0 rgba(218, 165, 32, 0.1);
+    }
+    
+    .dark .glass-card:hover {
+      background: rgba(20, 20, 20, 0.95);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.7),
+        0 8px 24px rgba(218, 165, 32, 0.25),
+        0 0 0 1px rgba(218, 165, 32, 0.4),
+        inset 0 1px 0 rgba(218, 165, 32, 0.15);
+    }
+
+    /* Hero Gradient */
+    .hero-gradient {
+      background: linear-gradient(135deg, #fefcf7 0%, #f7f3e9 100%);
+      transition: background 0.5s ease;
+    }
+    
+    .dark .hero-gradient {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+      position: relative;
+    }
+    
+    .dark .hero-gradient::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 30% 30%, rgba(218, 165, 32, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 70%, rgba(184, 134, 11, 0.08) 0%, transparent 60%);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    /* Modern Skills Pills */
+    .skill-pill {
+      background: linear-gradient(145deg, #f4d03f, #daa520);
+      border: 1px solid rgba(139, 69, 19, 0.2);
+      color: #1a1612;
+      font-weight: 600;
+      box-shadow: 
+        0 4px 12px rgba(218, 165, 32, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .skill-pill:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 
+        0 8px 24px rgba(218, 165, 32, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .dark .skill-pill {
+      background: linear-gradient(145deg, #b8860b, #8b6914);
+      color: #fefcf7;
+      border: 1px solid rgba(218, 165, 32, 0.3);
+      box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(218, 165, 32, 0.2);
+    }
+
+    /* Elegant Typography */
+    .elegant-title {
+      background: linear-gradient(135deg, #8b4513 0%, #daa520 50%, #cd853f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+    }
+    
+    .dark .elegant-title {
+      background: linear-gradient(135deg, #f4d03f 0%, #daa520 50%, #cd853f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Refined Decorative Elements */
+    .decorative-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.5), transparent);
+      margin: 3rem 0;
+    }
+
+    /* Timeline Enhancement */
+    .timeline-dot {
+      background: linear-gradient(145deg, #f4d03f, #daa520);
+      box-shadow: 
+        0 0 0 4px rgba(255, 253, 247, 1),
+        0 0 0 6px rgba(218, 165, 32, 0.3);
+    }
+    
+    .dark .timeline-dot {
+      box-shadow: 
+        0 0 0 4px rgba(10, 10, 10, 1),
+        0 0 0 6px rgba(218, 165, 32, 0.4);
+    }
+
+    /* Experience Section Enhancements */
+    .experience-highlight {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .experience-highlight::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(145deg, #daa520, #b8860b);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.2);
+    }
+    
+    .dark .experience-highlight::before {
+      box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.3);
+    }
+
+    /* Enhanced Theme Toggle */
+    .theme-toggle {
+      background: rgba(255, 253, 247, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(218, 165, 32, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .dark .theme-toggle {
+      background: rgba(15, 15, 15, 0.9);
+      border: 1px solid rgba(218, 165, 32, 0.3);
+    }
+    
+    .theme-toggle:hover {
+      background: rgba(255, 253, 247, 1);
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .dark .theme-toggle:hover {
+      background: rgba(20, 20, 20, 1);
+    }
+
+    /* Fade-in animations */
+    [data-aos] { opacity: 0; transition-property: opacity, transform; }
+    body.aos-animate [data-aos] { opacity: 1; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(218, 165, 32, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(145deg, #daa520, #b8860b);
+      border-radius: 4px;
+    }
+    
+    .dark ::-webkit-scrollbar-track {
+      background: rgba(30, 30, 30, 0.5);
+    }
+    
+    /* Smooth transitions for all color changes */
+    * {
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+  </style>
+</head>
+<body class="text-amber-900 dark:text-amber-100 bg-retro min-h-screen">
+
+<script>
+  // Enhanced theme initialization
+  function initializeTheme() {
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+  
+  // Call immediately
+  initializeTheme();
+  
+  // Toggle theme function
+//   function toggleTheme() {
+//     const isDark = document.documentElement.classList.toggle('dark');
+//     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+//     // Add subtle animation feedback
+//     const button = document.querySelector('.theme-toggle');
+//     button.style.transform = 'scale(0.95)';
+//     setTimeout(() => {
+//       button.style.transform = '';
+//     }, 150);
+//   }
+  
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  });
+  
+  // AOS animation initialization
+  window.addEventListener('DOMContentLoaded', () => {
+    AOS.init({duration: 1000, once: true, easing: 'ease-out-cubic'});
+    setTimeout(() => document.body.classList.add('aos-animate'), 200);
+  });
+</script>
+
+<main class="max-w-6xl mx-auto px-6 sm:px-12">
+  <!-- THEME TOGGLE BUTTON -->
+  <!-- <button onclick="toggleTheme()" aria-label="Toggle Theme"
+    class="theme-toggle fixed top-8 right-8 z-50 p-4 rounded-full shadow-lg transition-all duration-300"
+  >
+    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-amber-800 dark:text-amber-200" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="5.5" fill="currentColor" class="dark:hidden"/>
+      <path class="hidden dark:inline" fill="currentColor" d="M21.75 15.21a9 9 0 01-11 11c-4.635 0-8.45-3.815-8.45-8.45a9 9 0 0111-11 6.996 6.996 0 007.45 7.45z"/>
+    </svg>
+  </button> -->
+
+  <!-- HERO SECTION -->
+  <section data-aos="fade-up" class="hero-gradient pt-20 pb-24 text-center rounded-3xl mb-20 mt-8">
+    <div class="py-8">
+      <div class="mb-12">
+        <img src="image-removebg-preview.jpg"
+          alt="Sanjay Sajnani Avatar"
+          class="mx-auto h-40 w-40 rounded-full shadow-2xl border-4 border-amber-400 dark:border-amber-300 bg-amber-50 dark:bg-amber-900 transition-all duration-500 hover:scale-110" />
+      </div>
+      
+      <h1 class="modern-heading text-7xl sm:text-8xl lg:text-9xl font-bold mb-8 elegant-title leading-tight">
+        Sanjay Sajnani
+      </h1>
+      
+      <div class="modern-heading text-3xl sm:text-4xl font-semibold mb-8 text-amber-700 dark:text-amber-300">
+        Full Stack Web Developer
+      </div>
+      
+      <div class="decorative-line max-w-md mx-auto"></div>
+      
+      <p class="text-amber-800 dark:text-amber-200 max-w-4xl mx-auto text-xl sm:text-2xl leading-relaxed font-medium">
+        Crafting digital experiences where <span class="font-semibold text-amber-700 dark:text-amber-300">elegant design</span> 
+        meets <span class="font-semibold text-amber-700 dark:text-amber-300">cutting-edge technology</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section data-aos="fade-up" class="mb-24">
+    <div class="glass-card rounded-3xl p-12">
+      <h2 class="modern-heading text-4xl sm:text-5xl font-bold mb-10 text-amber-800 dark:text-amber-200 text-center">About Me</h2>
+      <p class="text-xl sm:text-2xl text-amber-800 dark:text-amber-200 leading-relaxed max-w-5xl mx-auto text-center font-medium">
+        A passionate full stack web developer with an eye for both timeless aesthetics and modern functionality. 
+        I specialize in creating digital experiences that seamlessly blend visual elegance with robust technical architecture, 
+        delivering solutions that are not only beautiful but also scalable and user-centric.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section data-aos="fade-up" class="mb-24">
+    <h2 class="modern-heading text-4xl sm:text-5xl font-bold mb-12 text-amber-800 dark:text-amber-200 text-center">Technical Expertise</h2>
+    <div class="flex flex-wrap gap-6 justify-center max-w-5xl mx-auto">
+      <!-- Frontend Technologies -->
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">React</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Next.js</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">TypeScript</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">JavaScript</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">HTML5</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">CSS3</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Tailwind CSS</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">SASS/SCSS</span>
+      
+      <!-- Backend Technologies -->
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Node.js</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Express.js</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Python</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">FastAPI</span>
+      
+      <!-- Databases -->
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">MongoDB</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">PostgreSQL</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">MySQL</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Redis</span>
+      
+      <!-- Tools & Others -->
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Git</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Docker</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">AWS</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Vercel</span>
+      <span class="skill-pill px-8 py-4 rounded-full text-lg">Figma</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section data-aos="fade-up" class="mb-24">
+    <h2 class="modern-heading text-4xl sm:text-5xl font-bold mb-16 text-amber-800 dark:text-amber-200 text-center">Featured Projects</h2>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Project 1 -->
+      <a href="https://mock-mantra-sanjay-sajnani.vercel.app" target="_blank"
+         class="group glass-card rounded-3xl p-10 block">
+        <div class="modern-heading text-3xl font-bold mb-4 text-amber-800 dark:text-amber-200 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors">
+          Mock Mantra
+        </div>
+        <div class="mb-6 text-sm text-amber-700 dark:text-amber-300 font-semibold uppercase tracking-wider">
+          React • Next.js • Gemini AI • Clerk • PostgreSQL
+        </div>
+        <p class="text-amber-800 dark:text-amber-200 mb-6 leading-relaxed text-lg">
+          An AI-powered mock interview platform designed to provide real-time practice sessions and intelligent feedback for aspiring professionals seeking to enhance their interview skills.
+        </p>
+        <span class="inline-flex items-center text-amber-700 dark:text-amber-300 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+          View Live Demo 
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="https://projectmanager-nrj8.vercel.app" target="_blank"
+         class="group glass-card rounded-3xl p-10 block">
+        <div class="modern-heading text-3xl font-bold mb-4 text-amber-800 dark:text-amber-200 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors">
+          TaskFlow
+        </div>
+        <div class="mb-6 text-sm text-amber-700 dark:text-amber-300 font-semibold uppercase tracking-wider">
+          Next.js • PostgreSQL • Drizzle ORM • Tailwind CSS
+        </div>
+        <p class="text-amber-800 dark:text-amber-200 mb-6 leading-relaxed text-lg">
+          A comprehensive dashboard solution for managing projects, tracking tasks, monitoring statuses, and enhancing productivity workflows across teams and individuals.
+        </p>
+        <span class="inline-flex items-center text-amber-700 dark:text-amber-300 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+          View Live Demo 
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="https://bejewelled-heliotrope-1d0ad5.netlify.app" target="_blank"
+         class="group glass-card rounded-3xl p-10 block">
+        <div class="modern-heading text-3xl font-bold mb-4 text-amber-800 dark:text-amber-200 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors">
+          Musicly
+        </div>
+        <div class="mb-6 text-sm text-amber-700 dark:text-amber-300 font-semibold uppercase tracking-wider">
+          React • Tailwind CSS • Context API • React Router
+        </div>
+        <p class="text-amber-800 dark:text-amber-200 mb-6 leading-relaxed text-lg">
+          A sophisticated music player application inspired by leading streaming platforms, featuring modern design patterns and intuitive user experience for seamless music discovery.
+        </p>
+        <span class="inline-flex items-center text-amber-700 dark:text-amber-300 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+          View Live Demo 
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="https://github.com/TELIBO" target="_blank"
+         class="group glass-card rounded-3xl p-10 block">
+        <div class="modern-heading text-3xl font-bold mb-4 text-amber-800 dark:text-amber-200 group-hover:text-amber-600 dark:group-hover:text-amber-300 transition-colors">
+          Portfolio Website
+        </div>
+        <div class="mb-6 text-sm text-amber-700 dark:text-amber-300 font-semibold uppercase tracking-wider">
+          Next.js • Tailwind CSS • Framer Motion
+        </div>
+        <p class="text-amber-800 dark:text-amber-200 mb-6 leading-relaxed text-lg">
+          A responsive, modern portfolio website designed to showcase professional work and establish a strong digital presence with elegant animations and user-friendly navigation.
+        </p>
+        <span class="inline-flex items-center text-amber-700 dark:text-amber-300 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+          View on GitHub 
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE SECTION -->
+  <section data-aos="fade-up" class="mb-24">
+    <h2 class="modern-heading text-4xl sm:text-5xl font-bold mb-16 text-amber-800 dark:text-amber-200 text-center">Work Experience</h2>
+    <div class="space-y-12 max-w-5xl mx-auto">
+      <!-- Current Role -->
+      <div class="glass-card rounded-3xl p-10">
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+          <div>
+            <h3 class="modern-heading text-2xl sm:text-3xl font-bold text-amber-800 dark:text-amber-200 mb-2">
+              Front-End Developer
+            </h3>
+            <p class="text-xl text-amber-700 dark:text-amber-300 font-semibold mb-2">Sripto</p>
+            <p class="text-base text-amber-600 dark:text-amber-400 font-medium">Vijayawada, India</p>
+          </div>
+          <div class="mt-4 lg:mt-0 lg:text-right">
+            <span class="inline-block px-4 py-2 bg-amber-200 dark:bg-amber-800 text-amber-800 dark:text-amber-200 rounded-full text-sm font-semibold">
+              January 2025 – April 2025
+            </span>
+          </div>
+        </div>
+        
+        <div class="space-y-4 text-amber-800 dark:text-amber-200 text-lg">
+          <div class="experience-highlight">
+            <strong class="text-amber-700 dark:text-amber-300">Frontend Architecture Leadership:</strong> Led the complete frontend development of Rotaract Job Portal using Next.js, delivering 25+ responsive pages with modern UI/UX design patterns and optimal performance.
+          </div>
+          <div class="experience-highlight">
+            <strong class="text-amber-700 dark:text-amber-300">Authentication & Security:</strong> Architected and implemented secure OAuth authentication system with protected routing, resolving complex server-side rendering issues through advanced cookie management strategies.
+          </div>
+          <div class="experience-highlight">
+            <strong class="text-amber-700 dark:text-amber-300">Responsive Design Excellence:</strong> Ensured cross-platform compatibility and mobile-first responsive design, resulting in seamless user experience across all devices and browsers.
+          </div>
+          <div class="experience-highlight">
+            <strong class="text-amber-700 dark:text-amber-300">Performance Optimization:</strong> Optimized application performance through code splitting, lazy loading, and efficient state management, improving page load times by 40%.
+          </div>
+        </div>
+        
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="px-4 py-2 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium">Next.js</span>
+          <span class="px-4 py-2 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium">React</span>
+          <span class="px-4 py-2 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium">TypeScript</span>
+          <span class="px-4 py-2 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium">OAuth</span>
+          <span class="px-4 py-2 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium">SSR</span>
+          <span class="px-4 py-2 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 rounded-full text-sm font-medium">Responsive Design</span>
+        </div>
+      </div>
+      
+      <!-- Freelance/Project Work -->
+      <div class="glass-card rounded-3xl p-10">
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+          <div>
+            <h3 class="modern-heading text-2xl sm:text-3xl font-bold text-amber-800 dark:text-amber-200 mb-2">
+              Freelance Full Stack Developer
+            </h3>
+            <p class="text-xl text-amber-700 dark:text-amber-300 font-semibold mb-2">Independent Projects</p>
