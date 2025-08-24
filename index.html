@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,12 @@
   <title>Sanjay Sajnani | Full Stack Web Developer</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Configure Tailwind for dark mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <!-- AOS Animate On Scroll -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -33,10 +38,10 @@
     }
     
     .dark .bg-retro {
-      background: #0a0a0a;
+      background: #0a0a0a !important;
       background-image: 
         radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(184, 134, 11, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 80% 70%, rgba(184, 134, 11, 0.06) 0%, transparent 50%) !important;
     }
 
     /* Navigation Header */
@@ -48,8 +53,8 @@
     }
     
     .dark .nav-header {
-      background: rgba(10, 10, 10, 0.95);
-      border-bottom: 1px solid rgba(218, 165, 32, 0.25);
+      background: rgba(10, 10, 10, 0.95) !important;
+      border-bottom: 1px solid rgba(218, 165, 32, 0.25) !important;
     }
     
     .nav-header.scrolled {
@@ -57,7 +62,7 @@
     }
     
     .dark .nav-header.scrolled {
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
     }
 
     .nav-link {
@@ -70,7 +75,7 @@
     }
     
     .dark .nav-link {
-      color: #fbbf24;
+      color: #fbbf24 !important;
     }
     
     .nav-link:hover {
@@ -80,8 +85,8 @@
     }
     
     .dark .nav-link:hover {
-      color: #f59e0b;
-      background: rgba(218, 165, 32, 0.15);
+      color: #f59e0b !important;
+      background: rgba(218, 165, 32, 0.15) !important;
     }
     
     .nav-link.active {
@@ -90,8 +95,8 @@
     }
     
     .dark .nav-link.active {
-      color: #f59e0b;
-      background: rgba(218, 165, 32, 0.2);
+      color: #f59e0b !important;
+      background: rgba(218, 165, 32, 0.2) !important;
     }
 
     /* Logo */
@@ -104,10 +109,10 @@
     }
     
     .dark .logo {
-      background: linear-gradient(135deg, #f4d03f 0%, #daa520 50%, #cd853f 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: linear-gradient(135deg, #f4d03f 0%, #daa520 50%, #cd853f 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
     }
 
     /* Mobile Menu */
@@ -118,8 +123,8 @@
     }
     
     .dark .mobile-menu {
-      background: rgba(10, 10, 10, 0.98);
-      border: 1px solid rgba(218, 165, 32, 0.3);
+      background: rgba(10, 10, 10, 0.98) !important;
+      border: 1px solid rgba(218, 165, 32, 0.3) !important;
     }
 
     /* Hamburger Animation */
@@ -145,7 +150,7 @@
     .dark .hamburger-top,
     .dark .hamburger-middle,
     .dark .hamburger-bottom {
-      background: #fbbf24;
+      background: #fbbf24 !important;
     }
     
     .hamburger-top {
@@ -193,21 +198,21 @@
     }
     
     .dark .glass-card {
-      background: rgba(15, 15, 15, 0.9);
-      border: 1px solid rgba(218, 165, 32, 0.3);
+      background: rgba(15, 15, 15, 0.9) !important;
+      border: 1px solid rgba(218, 165, 32, 0.3) !important;
       box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.6),
         0 4px 16px rgba(218, 165, 32, 0.15),
-        inset 0 1px 0 rgba(218, 165, 32, 0.1);
+        inset 0 1px 0 rgba(218, 165, 32, 0.1) !important;
     }
     
     .dark .glass-card:hover {
-      background: rgba(20, 20, 20, 0.95);
+      background: rgba(20, 20, 20, 0.95) !important;
       box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.7),
         0 8px 24px rgba(218, 165, 32, 0.25),
         0 0 0 1px rgba(218, 165, 32, 0.4),
-        inset 0 1px 0 rgba(218, 165, 32, 0.15);
+        inset 0 1px 0 rgba(218, 165, 32, 0.15) !important;
     }
 
     /* Hero Gradient */
@@ -217,7 +222,7 @@
     }
     
     .dark .hero-gradient {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 50%, #1a1a1a 100%) !important;
       position: relative;
     }
     
@@ -255,12 +260,12 @@
     }
 
     .dark .skill-pill {
-      background: linear-gradient(145deg, #b8860b, #8b6914);
-      color: #fefcf7;
-      border: 1px solid rgba(218, 165, 32, 0.3);
+      background: linear-gradient(145deg, #b8860b, #8b6914) !important;
+      color: #fefcf7 !important;
+      border: 1px solid rgba(218, 165, 32, 0.3) !important;
       box-shadow: 
         0 4px 12px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(218, 165, 32, 0.2);
+        inset 0 1px 0 rgba(218, 165, 32, 0.2) !important;
     }
 
     /* Elegant Typography */
@@ -273,10 +278,10 @@
     }
     
     .dark .elegant-title {
-      background: linear-gradient(135deg, #f4d03f 0%, #daa520 50%, #cd853f 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: linear-gradient(135deg, #f4d03f 0%, #daa520 50%, #cd853f 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
     }
 
     /* Refined Decorative Elements */
@@ -297,7 +302,7 @@
     .dark .timeline-dot {
       box-shadow: 
         0 0 0 4px rgba(10, 10, 10, 1),
-        0 0 0 6px rgba(218, 165, 32, 0.4);
+        0 0 0 6px rgba(218, 165, 32, 0.4) !important;
     }
 
     /* Experience Section Enhancements */
@@ -320,7 +325,7 @@
     }
     
     .dark .experience-highlight::before {
-      box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.3);
+      box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.3) !important;
     }
 
     /* Enhanced Theme Toggle */
@@ -332,8 +337,8 @@
     }
     
     .dark .theme-toggle {
-      background: rgba(15, 15, 15, 0.9);
-      border: 1px solid rgba(218, 165, 32, 0.3);
+      background: rgba(15, 15, 15, 0.9) !important;
+      border: 1px solid rgba(218, 165, 32, 0.3) !important;
     }
     
     .theme-toggle:hover {
@@ -342,7 +347,24 @@
     }
     
     .dark .theme-toggle:hover {
-      background: rgba(20, 20, 20, 1);
+      background: rgba(20, 20, 20, 1) !important;
+    }
+
+    /* Theme toggle icons */
+    .sun-icon {
+      display: block;
+    }
+    
+    .moon-icon {
+      display: none;
+    }
+    
+    .dark .sun-icon {
+      display: none;
+    }
+    
+    .dark .moon-icon {
+      display: block;
     }
 
     /* Fade-in animations */
@@ -364,7 +386,7 @@
     }
     
     .dark ::-webkit-scrollbar-track {
-      background: rgba(30, 30, 30, 0.5);
+      background: rgba(30, 30, 30, 0.5) !important;
     }
     
     /* Smooth transitions for all color changes */
@@ -381,17 +403,19 @@
 <body class="text-amber-900 dark:text-amber-100 bg-retro min-h-screen">
 
 <script>
-  // Enhanced theme initialization
+  // Enhanced theme initialization - moved to head for faster execution
   function initializeTheme() {
-    if (localStorage.getItem('theme') === 'dark' || 
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   }
   
-  // Call immediately
+  // Call immediately to prevent flash
   initializeTheme();
   
   // Toggle theme function
@@ -464,7 +488,7 @@
   });
   
   // AOS animation initialization
-  window.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     AOS.init({duration: 1000, once: true, easing: 'ease-out-cubic'});
     setTimeout(() => document.body.classList.add('aos-animate'), 200);
     
@@ -479,9 +503,9 @@
   <nav class="max-w-6xl mx-auto px-6 sm:px-12 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
-      <div class="logo modern-heading text-2xl font-bold">
+      <!-- <div class="logo modern-heading text-2xl font-bold">
         SS
-      </div>
+      </div> -->
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
@@ -490,7 +514,7 @@
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#experience" class="nav-link">Experience</a>
-         <a href="#Contact" class="nav-link">Contact</a>
+        <a href="#Contact" class="nav-link">Contact</a>
       </div>
       
       <!-- Theme Toggle & Mobile Menu Button -->
@@ -499,9 +523,22 @@
         <button onclick="toggleTheme()" aria-label="Toggle Theme"
           class="theme-toggle p-3 rounded-full shadow-lg transition-all duration-300"
         >
-          <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-800 dark:text-amber-200" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="5.5" fill="currentColor" class="dark:hidden"/>
-            <path class="hidden dark:inline" fill="currentColor" d="M21.75 15.21a9 9 0 01-11 11c-4.635 0-8.45-3.815-8.45-8.45a9 9 0 0111-11 6.996 6.996 0 007.45 7.45z"/>
+          <!-- Sun Icon (Light Mode) -->
+          <svg class="sun-icon w-5 h-5 text-amber-800" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          
+          <!-- Moon Icon (Dark Mode) -->
+          <svg class="moon-icon w-5 h-5 text-amber-200" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21.75 15.21a9 9 0 01-11 11c-4.635 0-8.45-3.815-8.45-8.45a9 9 0 0111-11 6.996 6.996 0 007.45 7.45z"/>
           </svg>
         </button>
         
@@ -524,7 +561,7 @@
         <a href="#skills" class="nav-link text-center" onclick="closeMobileMenu()">Skills</a>
         <a href="#projects" class="nav-link text-center" onclick="closeMobileMenu()">Projects</a>
         <a href="#experience" class="nav-link text-center" onclick="closeMobileMenu()">Experience</a>
-         <a href="#Contact" class="nav-link text-center" onclick="closeMobileMenu()">Contact</a>
+        <a href="#Contact" class="nav-link text-center" onclick="closeMobileMenu()">Contact</a>
       </div>
     </div>
   </nav>
@@ -535,9 +572,9 @@
   <section id="home" data-aos="fade-up" class="hero-gradient pt-20 pb-24 text-center rounded-3xl mb-20 mt-8">
     <div class="py-8">
       <div class="mb-12">
-        <img src="image-removebg-preview.jpg"
-          alt="Sanjay Sajnani Avatar"
-          class="mx-auto h-42 w-52 rounded-full  border-4  dark:border-amber-300 dark:bg-amber-900 transition-transform duration-500 hover:scale-110" />
+        <div class="mx-auto h-42 w-52 rounded-full border-4 border-amber-600 dark:border-amber-300 bg-amber-100 dark:bg-amber-900 transition-transform duration-500 hover:scale-110 flex items-center justify-center">
+          <!-- <span class="text-6xl font-bold text-amber-800 dark:text-amber-200">SS</span> -->
+        </div>
       </div>
       
       <h1 class="modern-heading text-7xl sm:text-8xl lg:text-9xl font-bold mb-8 elegant-title leading-tight">
@@ -772,7 +809,7 @@
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="Contact"      data-aos="fade-up" class="mb-24">
+  <section id="Contact" data-aos="fade-up" class="mb-24">
     <div class="glass-card rounded-3xl p-12 text-center">
       <h2 class="modern-heading text-4xl sm:text-5xl font-bold mb-8 text-amber-800 dark:text-amber-200">Let's Connect</h2>
       <p class="text-xl text-amber-800 dark:text-amber-200 mb-12 max-w-3xl mx-auto">
